@@ -17,7 +17,7 @@ export const generatePDF = (
     doc.text("Vacation.AI", margin, 15);
     doc.setFontSize(15);
     doc.setTextColor(144, 144, 144);
-    doc.text("by Codelinear", margin + 8, 22.5);
+    doc.text("by Uzaif", margin + 8, 22.5);
     doc.setTextColor(0, 0, 0);
     doc.setFontSize(37);
     doc.setFont("times", "normal");

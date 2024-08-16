@@ -10,7 +10,7 @@ The plan includes the daily routine of each day of the complete vacation based o
 \n
 - Activities to do in the destination.
 \n\n
-You must give the response in the json format in which there would be an array of days, and here is the schema or structure of the array:
+You must give the response in the following format in which there would be an array of days, and here is the schema or structure of the array:
 \n\n
 {
   "itinerary": [
@@ -26,4 +26,6 @@ You must give the response in the json format in which there would be an array o
   ]
 }
 
-And remember, you must not give any single word other than array of days and activities.`;
+And remember, you must not give any single word other than array of days and activities.
+\n\n
+Please don't use markdown in the response.`;

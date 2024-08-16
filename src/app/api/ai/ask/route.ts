@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateText } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { vacationSystemPrompt } from "@/lib/prompts";
 
 export const maxDuration = 60;
@@ -9,12 +9,12 @@ export const POST = async (req: NextRequest) => {
   try {
     const { destination, endDate, reason, startDate } = await req.json();
 
-    const openai = createOpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+    const google = createGoogleGenerativeAI({
+      apiKey: process.env.GEMINI_API_KEY,
     });
 
     const response = await generateText({
-      model: openai("gpt-3.5-turbo-0125"),
+      model: google("models/gemini-1.5-flash-latest"),
       system: vacationSystemPrompt,
       prompt: `Plan a vacation itinerary for me. Here are all the parameters:
       \n\n
@@ -32,6 +32,7 @@ export const POST = async (req: NextRequest) => {
       plan: JSON.parse(response.text),
     });
   } catch (error: any) {
+    console.log(error)
     return NextResponse.json(
       {
         message: error.message,
