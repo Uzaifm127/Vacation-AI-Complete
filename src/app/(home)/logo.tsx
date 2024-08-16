@@ -14,7 +14,7 @@ const Logo = () => {
         className="flex hover:underline transition text-[10px] sm:text-sm items-center cursor-pointer justify-end ml-auto mt-2"
         onClick={() => router.push("https://uzaifm127.vercel.app")}
       >
-        <h4 className="mr-1 mb-2">by Uzaif</h4>
+        <h4 className="mr-1">by Uzaif</h4>
         <Redirect />
       </div>
     </header>
